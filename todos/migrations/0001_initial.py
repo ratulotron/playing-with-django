@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='todo',
-            name='todo_list',
+            name='todolist',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='todos', to='todos.TodoList'),
         ),
     ]
