@@ -166,3 +166,5 @@ ENV/
 /site
 
 # End of https://www.gitignore.io/api/node,django,python
+## JetBrains
+.idea/
