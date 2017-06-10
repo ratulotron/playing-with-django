@@ -168,3 +168,5 @@ ENV/
 # End of https://www.gitignore.io/api/node,django,python
 ## JetBrains
 .idea/
+.DS_Store
+# static/
