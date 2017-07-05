@@ -24,6 +24,25 @@ LOGIN_URL = '/auth/login/'
 LOGOUT_URL = '/auth/logout/'
 
 
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": True,
+    "LOGIN_URL": "/auth/login/",
+    "LOGOUT_URL": "/auth/logout/",
+    "SUPPORTED_SUBMIT_METHOD": ['get', 'post', 'put', 'delete', 'patch'],
+    "APIS_SORTER": "alpha",
+    "VALIDATOR_URL": None,
+    'SECURITY_DEFINITIONS': {
+        # "api_key": {
+        #     "type": "apiKey",
+        #     "name": "Authorization",
+        #     "in": "header"
+        # },
+        'basic': {
+            'type': 'basic'
+        }
+    }
+}
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -34,7 +53,7 @@ SECRET_KEY = '=i%h2#qh*wg_6u-xnt@u8ehkubl^8#7po1k^(f!w-3bc!j@t1c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*'] #,'0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['*']  # ,'0.0.0.0', '127.0.0.1']
 
 
 # Application definition
