@@ -1,11 +1,11 @@
 from django.conf.urls import url, include
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import CreateView, DetailsView
+from .views import CreateEntryView, EntryDetailsView
 
 urlpatterns = {
-    url(r'^bucketlists/$', CreateView.as_view(), name="create"),
-    url(r'^bucketlists/(?P<pk>[0-9]+)/$',
-        DetailsView.as_view(), name="details"),
+    url(r'^$', CreateEntryView.as_view(), name="create"),
+    url(r'^(?P<pk>[0-9]+)/$',
+        EntryDetailsView.as_view(), name="details"),
 }
 
 # Format suffix pattern helps to specify data format (raw json or html)

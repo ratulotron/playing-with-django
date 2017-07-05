@@ -14,6 +14,13 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ],
+# }
+
+LOGIN_URL = '/auth/login/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +32,7 @@ SECRET_KEY = '=i%h2#qh*wg_6u-xnt@u8ehkubl^8#7po1k^(f!w-3bc!j@t1c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] #,'0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
+    # user apps
     'api',
 ]
 
