@@ -4,35 +4,96 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	../api/migrations/0001_initial.py	1;"	kind:file	line:1
 ALLOWED_HOSTS	../djangorest/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
-AUTH_PASSWORD_VALIDATORS	../djangorest/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:87
+APIClient	../api/tests.py	/^from rest_framework.test import APIClient$/;"	kind:namespace	line:1
+AUTH_PASSWORD_VALIDATORS	../djangorest/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:89
+ApiConfig	../api/apps.py	/^class ApiConfig(AppConfig):$/;"	kind:class	line:4
+AppConfig	../api/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
 BASE_DIR	../djangorest/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-DATABASES	../djangorest/settings.py	/^DATABASES = {$/;"	kind:variable	line:76
+Bucketlist	../api/models.py	/^class Bucketlist(models.Model):$/;"	kind:class	line:3
+Bucketlist	../api/serializers.py	/^from .models import Bucketlist$/;"	kind:namespace	line:2
+Bucketlist	../api/tests.py	/^from .models import Bucketlist$/;"	kind:namespace	line:5
+Bucketlist	../api/views.py	/^from .models import Bucketlist$/;"	kind:namespace	line:4
+BucketlistSerializer	../api/serializers.py	/^class BucketlistSerializer(serializers.ModelSerializer):$/;"	kind:class	line:4
+BucketlistSerializer	../api/views.py	/^from .serializers import BucketlistSerializer$/;"	kind:namespace	line:3
+CreateView	../api/urls.py	/^from .views import CreateView$/;"	kind:namespace	line:3
+CreateView	../api/views.py	/^class CreateView(generics.ListCreateAPIView):$/;"	kind:class	line:7
+DATABASES	../djangorest/settings.py	/^DATABASES = {$/;"	kind:variable	line:78
 DEBUG	../djangorest/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
 INSTALLED_APPS	../djangorest/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
-LANGUAGE_CODE	../djangorest/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:106
-MIDDLEWARE	../djangorest/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:42
-ROOT_URLCONF	../djangorest/settings.py	/^ROOT_URLCONF = 'djangorest.urls'$/;"	kind:variable	line:52
-STATIC_URL	../djangorest/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:120
-TEMPLATES	../djangorest/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:54
-TIME_ZONE	../djangorest/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:108
-USE_I18N	../djangorest/settings.py	/^USE_I18N = True$/;"	kind:variable	line:110
-USE_L10N	../djangorest/settings.py	/^USE_L10N = True$/;"	kind:variable	line:112
-USE_TZ	../djangorest/settings.py	/^USE_TZ = True$/;"	kind:variable	line:114
-WSGI_APPLICATION	../djangorest/settings.py	/^WSGI_APPLICATION = 'djangorest.wsgi.application'$/;"	kind:variable	line:70
+LANGUAGE_CODE	../djangorest/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:108
+MIDDLEWARE	../djangorest/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:44
+Meta	../api/serializers.py	/^    class Meta:$/;"	kind:class	line:7
+Migration	../api/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+ModelTestCase	../api/tests.py	/^class ModelTestCase(TestCase):$/;"	kind:class	line:8
+ROOT_URLCONF	../djangorest/settings.py	/^ROOT_URLCONF = 'djangorest.urls'$/;"	kind:variable	line:54
+STATIC_URL	../djangorest/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:122
+TEMPLATES	../djangorest/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:56
+TIME_ZONE	../djangorest/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:110
+TestCase	../api/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:4
+USE_I18N	../djangorest/settings.py	/^USE_I18N = True$/;"	kind:variable	line:112
+USE_L10N	../djangorest/settings.py	/^USE_L10N = True$/;"	kind:variable	line:114
+USE_TZ	../djangorest/settings.py	/^USE_TZ = True$/;"	kind:variable	line:116
+ViewTestCase	../api/tests.py	/^class ViewTestCase(TestCase):$/;"	kind:class	line:24
+WSGI_APPLICATION	../djangorest/settings.py	/^WSGI_APPLICATION = 'djangorest.wsgi.application'$/;"	kind:variable	line:72
+__init__.py	../api/__init__.py	1;"	kind:file	line:1
+__init__.py	../api/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../djangorest/__init__.py	1;"	kind:file	line:1
+__str__	../api/models.py	/^    def __str__(self):$/;"	kind:member	line:9
+admin	../api/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
 admin	../djangorest/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:17
+admin.py	../api/admin.py	1;"	kind:file	line:1
 application	../djangorest/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../api/apps.py	1;"	kind:file	line:1
+date_created	../api/models.py	/^    date_created = models.DateTimeField(auto_now_add=True)$/;"	kind:variable	line:6
+date_modified	../api/models.py	/^    date_modified = models.DateTimeField(auto_now=True)$/;"	kind:variable	line:7
+dependencies	../api/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:12
 django	../manage.py	/^            import django$/;"	kind:namespace	line:14
 execute_from_command_line	../manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+fields	../api/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:18
+fields	../api/serializers.py	/^        fields = ('id', 'name', 'date_created', 'date_modified')$/;"	kind:variable	line:10
+format_suffix_patterns	../api/urls.py	/^from rest_framework.urlpatterns import format_suffix_patterns$/;"	kind:namespace	line:2
+generics	../api/views.py	/^from rest_framework import generics$/;"	kind:namespace	line:2
 get_wsgi_application	../djangorest/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+include	../api/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
+initial	../api/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
 manage.py	../manage.py	1;"	kind:file	line:1
+migrations	../api/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+model	../api/serializers.py	/^        model = Bucketlist$/;"	kind:variable	line:9
+models	../api/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	../api/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	../api/models.py	1;"	kind:file	line:1
+name	../api/apps.py	/^    name = 'api'$/;"	kind:variable	line:5
+name	../api/migrations/0001_initial.py	/^            name='Bucketlist',$/;"	kind:variable	line:17
+name	../api/models.py	/^    name = models.CharField(max_length=255, blank=False, unique=True)$/;"	kind:variable	line:5
+operations	../api/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:15
 os	../djangorest/settings.py	/^import os$/;"	kind:namespace	line:13
 os	../djangorest/wsgi.py	/^import os$/;"	kind:namespace	line:10
 os	../manage.py	/^import os$/;"	kind:namespace	line:2
+perform_create	../api/views.py	/^    def perform_create(self, serializer):$/;"	kind:member	line:12
+queryset	../api/views.py	/^    queryset = Bucketlist.objects.all()$/;"	kind:variable	line:9
+read_only_fields	../api/serializers.py	/^        read_only_fields = ('date_created', 'date_modified')/;"	kind:variable	line:11
+render	../api/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:1
+reverse	../api/tests.py	/^from django.core.urlresolvers import reverse$/;"	kind:namespace	line:3
+serializer_class	../api/views.py	/^    serializer_class = BucketlistSerializer$/;"	kind:variable	line:10
+serializers	../api/serializers.py	/^from rest_framework import serializers$/;"	kind:namespace	line:1
+serializers.py	../api/serializers.py	1;"	kind:file	line:1
+setUp	../api/tests.py	/^    def setUp(self):$/;"	kind:member	line:11
+setUp	../api/tests.py	/^    def setUp(self):$/;"	kind:member	line:27
 settings.py	../djangorest/settings.py	1;"	kind:file	line:1
+status	../api/tests.py	/^from rest_framework import status$/;"	kind:namespace	line:2
 sys	../manage.py	/^import sys$/;"	kind:namespace	line:3
+test_api_can_create_a_bucketlist	../api/tests.py	/^    def test_api_can_create_a_bucketlist(self):$/;"	kind:member	line:36
+test_model_can_create_a_bucketlist	../api/tests.py	/^    def test_model_can_create_a_bucketlist(self):$/;"	kind:member	line:16
+tests.py	../api/tests.py	1;"	kind:file	line:1
+unicode_literals	../api/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+url	../api/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 url	../djangorest/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:16
+urlpatterns	../api/urls.py	/^urlpatterns = format_suffix_patterns(urlpatterns)$/;"	kind:variable	line:9
+urlpatterns	../api/urls.py	/^urlpatterns = {$/;"	kind:variable	line:5
 urlpatterns	../djangorest/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urls.py	../api/urls.py	1;"	kind:file	line:1
 urls.py	../djangorest/urls.py	1;"	kind:file	line:1
+views.py	../api/views.py	1;"	kind:file	line:1
 wsgi.py	../djangorest/wsgi.py	1;"	kind:file	line:1
