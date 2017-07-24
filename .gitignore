@@ -1,5 +1,12 @@
 
-# Created by https://www.gitignore.io/api/web,node,django,python
+# Created by https://www.gitignore.io/api/node,code,python,django
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
 
 ### Django ###
 *.log
@@ -9,6 +16,10 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
 
 ### Node ###
 # Logs
@@ -165,17 +176,4 @@ ENV/
 # mkdocs documentation
 /site
 
-### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.xhtml
-
-# End of https://www.gitignore.io/api/web,node,django,python
+# End of https://www.gitignore.io/api/node,code,python,django
