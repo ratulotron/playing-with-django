@@ -3,7 +3,7 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.test import TestCase
-from .models import Bucketlist
+from bucketlist.models import Bucketlist
 
 
 class ModelTestCase(TestCase):

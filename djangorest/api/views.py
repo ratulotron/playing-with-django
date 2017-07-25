@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from rest_framework import generics, permissions
+
+from bucketlist.models import Bucketlist
 from .permissions import IsOwner
 from .serializers import BucketlistSerializer
-from .models import Bucketlist
 
 
 class CreateEntryView(generics.ListCreateAPIView):

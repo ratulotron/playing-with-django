@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Bucketlist
+from bucketlist.models import Bucketlist
 
 class BucketlistSerializer(serializers.ModelSerializer):
     """Serializer to map the Model instance into JSON format."""

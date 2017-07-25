@@ -15,15 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 from rest_framework_swagger.views import get_swagger_view
 
 
-schema_view = get_swagger_view(title='Bucketlist API')
+VERSION = "v1"
 
 urlpatterns = [
-    url(r'^$', schema_view),
-    url(r'^auth/', include('rest_framework.urls',
-                           namespace='rest_framework')),
+    url(r'^auth/',
+        include('rest_framework.urls',
+        namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/v1/', include('api.urls'))  # Add this line
+    url(r'^api/{version}/'.format(version=VERSION), 
+        include('api.urls'),
+        name='api'),  # Add this line
+    url(r'^$', RedirectView.as_view(permanent=False, url='/api/{version}/'.format(version=VERSION))),
+
 ]
