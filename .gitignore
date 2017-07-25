@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/web,node,django,python
+=======
+# Created by https://www.gitignore.io/api/node,django,python
+>>>>>>> 2c9b69741e7d5f9dcaaff0a5c2cd2af7cf253d9a
 
 ### Django ###
 *.log
@@ -165,6 +169,7 @@ ENV/
 # mkdocs documentation
 /site
 
+<<<<<<< HEAD
 ### Web ###
 *.asp
 *.cer
@@ -179,3 +184,10 @@ ENV/
 *.xhtml
 
 # End of https://www.gitignore.io/api/web,node,django,python
+=======
+# End of https://www.gitignore.io/api/node,django,python
+## JetBrains
+.idea/
+.DS_Store
+# static/
+>>>>>>> 2c9b69741e7d5f9dcaaff0a5c2cd2af7cf253d9a
