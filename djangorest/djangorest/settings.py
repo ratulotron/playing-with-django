@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     # user apps
-    'bucketlist',
+    'tasklist',
     'api',
 ]
 
