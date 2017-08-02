@@ -1,5 +1,5 @@
 from rest_framework.permissions import BasePermission
-from .models import Bucketlist
+from bucketlist.models import Bucketlist
 
 
 class IsOwner(BasePermission):

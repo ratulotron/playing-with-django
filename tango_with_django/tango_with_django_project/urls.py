@@ -1,4 +1,4 @@
-"""djangorest URL Configuration
+"""tango_with_django_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,20 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic.base import RedirectView
-from rest_framework_swagger.views import get_swagger_view
-
-
-VERSION = "v1"
+import rango.views
 
 urlpatterns = [
-    url(r'^auth/',
-        include('rest_framework.urls',
-        namespace='rest_framework')),
+    # url(r'^$', rango.views.index, name='index'),
+    # url(r'^about', rango.views.about, name='about'),
+    url(r'^rango/', include('rango.urls')),
+    # above maps any URLs starting
+    # with rango/ to be handled by
+    # the rango application
     url(r'^admin/', admin.site.urls),
-    url(r'^api/{version}/'.format(version=VERSION), 
-        include('api.urls'),
-        name='api'),  # Add this line
-    url(r'^$', RedirectView.as_view(permanent=False, url='/api/{version}/'.format(version=VERSION))),
-
 ]

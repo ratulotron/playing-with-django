@@ -1,4 +1,4 @@
-"""djangorest URL Configuration
+"""backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,20 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic.base import RedirectView
-from rest_framework_swagger.views import get_swagger_view
-
-
-VERSION = "v1"
 
 urlpatterns = [
-    url(r'^auth/',
-        include('rest_framework.urls',
-        namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/{version}/'.format(version=VERSION), 
-        include('api.urls'),
-        name='api'),  # Add this line
-    url(r'^$', RedirectView.as_view(permanent=False, url='/api/{version}/'.format(version=VERSION))),
-
+    url(r'^api-auth/',
+        include('rest_framework.urls', namespace='rest_framework'))
 ]
