@@ -22,7 +22,10 @@ class Task(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
     tasklist = models.ForeignKey(Tasklist,
                                  related_name='tasklist',
-                                 on_delete=models.CASCADE)
+                                 on_delete=models.CASCADE,
+                                 null=True)
+
+    # Task.object.save()
 
     def __str__(self):
         """Return the description of the task."""

@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from rest_framework import generics, permissions, viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
@@ -15,6 +16,12 @@ class TaskViewSet(viewsets.ViewSet):
         tasks = self.queryset.filter(tasklist=tasklist_pk)
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
+
+    def create(self, request, tasklist_pk):
+        serializer = TaskSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(tasklist=Tasklist.objects.get(pk=tasklist_pk))
+        return Response(serializer.data) # Response(serializer.data)
 
     def retrieve(self, request, pk=None):
         queryset = Task.objects.all()
@@ -40,9 +47,26 @@ class TasklistViewSet(viewsets.ViewSet):
         IsOwner
         )
 
-    def perform_create(self, serializer):
-        """Save the post data when creating a new tasklist."""
-        serializer.save(owner=self.request.user)
+    def list(self, request):
+        tasklists = self.queryset
+        serializer = TasklistSerializer(tasklists, many=True)
+        return Response(serializer.data)
+
+    def create(self, request):
+        serializer = TasklistSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(owner=self.request.user)
+        return Response(serializer.data) # Response(serializer.data)
+
+    def retrieve(self, request, pk=None):
+        queryset = self.queryset
+        tasklist = get_object_or_404(queryset, pk=pk)
+        serializer = TasklistSerializer(tasklist)
+        return Response(serializer.data)
+
+    # def perform_create(self, serializer):
+    #     """Save the post data when creating a new tasklist."""
+    #     serializer.save(owner=self.request.user)
 
 
 # class TasklistDetailView(generics.RetrieveUpdateDestroyAPIView):

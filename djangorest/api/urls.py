@@ -7,9 +7,8 @@ from .views import TasklistViewSet, TaskViewSet
 router = routers.SimpleRouter()
 router.register(r'tasklists', TasklistViewSet)
 
-
 tasklists_router = routers.NestedSimpleRouter(router, r'tasklists', lookup='tasklist')
-tasklists_router.register('tasks', TaskViewSet, base_name='tasklist-tasks')
+tasklists_router.register(r'tasks', TaskViewSet, base_name='tasklist-tasks')
 
 urlpatterns = [
     # url(r'^tasklists/$', TasklistListView.as_view(), name="tasklist_create"),
@@ -18,7 +17,8 @@ urlpatterns = [
     # url(r'^tasklists/(?P<pk>[0-9]+)/$', TasklistListView.as_view(), name="tasklist_create"),
     # url(r'^tasklists/(?P<pk>[0-9]+)/$',
     #     TasklistDetailView.as_view(), name="tasklist_details"),
-    url(),
+    url(r'^', include(router.urls)),
+    url(r'^', include(tasklists_router.urls)),
 ]
 
 # Format suffix pattern helps to specify data format (raw json or html)
