@@ -30,5 +30,4 @@ urlpatterns = [
         include('api.urls'),
         name='api'),  # Add this line
     url(r'^$', RedirectView.as_view(permanent=False, url='/api/{version}/'.format(version=VERSION))),
-
 ]

@@ -3,23 +3,23 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.test import TestCase
-from bucketlist.models import Bucketlist
+from tasklist.models import Tasklist
 
 
 class ModelTestCase(TestCase):
-    """This class defines the test suite for the bucketlist model."""
+    """This class defines the test suite for the tasklist model."""
 
     def setUp(self):
         """Define the test client and other test variables."""
         user = User.objects.create(username="nerd")
         self.bucketlist_name = "Write world class code"
-        self.bucketlist = Bucketlist(name=self.bucketlist_name, owner=user)
+        self.bucketlist = Tasklist(name=self.bucketlist_name, owner=user)
 
     def test_model_can_create_a_bucketlist(self):
-        """Test the bucketlist model can create a bucketlist"""
-        old_count = Bucketlist.objects.count()
+        """Test the tasklist model can create a tasklist"""
+        old_count = Tasklist.objects.count()
         self.bucketlist.save()
-        new_count = Bucketlist.objects.count()
+        new_count = Tasklist.objects.count()
         self.assertNotEqual(old_count, new_count)
 
 
@@ -56,8 +56,8 @@ class ViewTestCase(TestCase):
 
 
     def test_api_can_get_a_bucketlist(self):
-        """Test the api can get a given bucketlist."""
-        bucketlist = Bucketlist.objects.get(id=1)
+        """Test the api can get a given tasklist."""
+        bucketlist = Tasklist.objects.get(id=1)
         response = self.client.get(
             reverse('details', kwargs={'pk': bucketlist.id}),
             format="json"
@@ -65,12 +65,12 @@ class ViewTestCase(TestCase):
 
         # Test that response is OK
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        # Test that the response contains something called bucketlist
+        # Test that the response contains something called tasklist
         self.assertContains(response, bucketlist)
 
     def test_api_can_update_bucketlist(self):
-        """Test the api can update a given bucketlist."""
-        bucketlist = Bucketlist.objects.get(id=1)
+        """Test the api can update a given tasklist."""
+        bucketlist = Tasklist.objects.get(id=1)
         change_bucketlist = {'name': 'Something new'}
         response = self.client.put(
             reverse('details', kwargs={'pk': bucketlist.id}),
@@ -79,8 +79,8 @@ class ViewTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_api_can_delete_bucketlist(self):
-        """Test the api can delete a bucketlist."""
-        bucketlist = Bucketlist.objects.get(id=1)
+        """Test the api can delete a tasklist."""
+        bucketlist = Tasklist.objects.get(id=1)
         response = self.client.delete(
             reverse('details', kwargs={'pk': bucketlist.id}),
             format='json',

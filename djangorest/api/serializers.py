@@ -1,11 +1,21 @@
 from rest_framework import serializers
-from bucketlist.models import Bucketlist
+from tasklist.models import Tasklist, Task
 
-class BucketlistSerializer(serializers.ModelSerializer):
+class TasklistSerializer(serializers.ModelSerializer):
     """Serializer to map the Model instance into JSON format."""
 
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
-        model = Bucketlist
-        fields = ('id', 'name', 'owner', 'date_created', 'date_modified')
+        model = Tasklist
+        fields = ('id', 'name', 'owner')
+        read_only_fields = ('date_created', 'date_modified')
+
+
+class TaskSerializer(serializers.ModelSerializer):
+    """Serializer to map the Tasks into JSON format."""
+
+    class Meta:
+        """Meta class to map serializer's fields with the model fields."""
+        model = Task
+        fields = ('id', 'description', 'deadline', 'date_created', 'date_modified', 'tasklist')
         read_only_fields = ('date_created', 'date_modified')

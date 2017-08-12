@@ -238,6 +238,9 @@ ENV/
 # mkdocs documentation
 /site
 
+<<<<<<< HEAD
+# End of https://www.gitignore.io/api/node,code,python,django
+=======
 ### Web ###
 *.asp
 *.cer
@@ -252,3 +255,4 @@ ENV/
 *.xhtml
 
 # End of https://www.gitignore.io/api/web,node,django,python,pycharm
+>>>>>>> f4dc51883166a460cf0ac4ba16c0f672a321ae02
